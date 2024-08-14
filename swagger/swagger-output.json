@@ -1,0 +1,80 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Circle API Docs",
+    "description": "Welcome to Circle API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://react-vite-project-production.up.railway.app/api/v1"
+    },
+    {
+      "url": "http://localhost:5000"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "RegisterDTO": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fullName",
+          "username",
+          "email",
+          "password"
+        ]
+      },
+      "LoginDTO": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "CreateThreadDTO": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "image": {
+            "type": "file"
+          }
+        },
+        "required": [
+          "content",
+          "image"
+        ]
+      }
+    }
+  }
+}
